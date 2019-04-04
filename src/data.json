@@ -1,0 +1,16 @@
+{
+    "allData": [
+        {
+            "currency": "NIS",
+            "rate": "3.7"
+        },
+        {
+            "currency": "EUR",
+            "rate": "0.9"
+        },
+        {
+            "currency": "USD",
+            "rate": "1"
+        }
+    ]
+}
