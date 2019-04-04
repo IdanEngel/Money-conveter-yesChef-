@@ -1,17 +1,10 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-const path = require('path')
 const app = express()
 const api = require('./src/data')
 
-
-
-app.use(express.static(path.join(__dirname, 'src')))
-app.use(express.static(path.join(__dirname, 'node_modules')))
-
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
 
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
@@ -37,7 +30,7 @@ app.get('/convert/:number/:firtsCurrency/:secondCurrency',
         let number = req.params.number
         let firtsCurrency = req.params.firtsCurrency.toUpperCase()
         let secondCurrency = req.params.secondCurrency.toUpperCase()
-        
+
         for (let apiData of api.allData) {
             if (firtsCurrency === apiData.currency) {
                 firtsCurrency = apiData.rate
